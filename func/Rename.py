@@ -1,7 +1,7 @@
 import os
 from unidecode import unidecode
 
-down = f'C:/Users/{os.getlogin()}/Music/001/'
+down = f'C:/Users/{os.getlogin()}/Music/'
 
 
 def renameMp3(path):
