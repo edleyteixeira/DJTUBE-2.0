@@ -15,6 +15,7 @@ from Rename import renameMp3
 
 #SUBMENU
 def SubMenu(opcao):
+    #BAIXAR DO YOUTUBE
     if opcao == "11":
         links = input("Adicione as url separadas por vírgula: \n")
         subpath = input("Deseja salvar em que pasta? \n")
@@ -49,9 +50,11 @@ def SubMenu(opcao):
             print('Digite um opção válida')
             time.sleep(2)
             Menu()
+            
+    #OPERAÇAO COM ARQUIVOS
     if opcao == "21":
         subpath = input("Converter arquivos de que pasta? ")
-        print("Vamos converter todos os arquivos")
+        
         convertMp3(down+subpath+'/')
     elif opcao == "22":
         subpath = input("Renomear arquivos em que pasta? ")
@@ -90,6 +93,7 @@ def Menu():
             print("1 - CONVERTER MP4 PARA MP3")
             print("2 - ORGANIZAR NOME DOS ARQUIVOS")
             op = input("\n \n Opção escolhida: ")
+            SubMenu(opcao+op)
                         
         elif opcao == "3":
             print("Você escolheu a opção 3.")
