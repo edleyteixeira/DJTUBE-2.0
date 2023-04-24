@@ -13,6 +13,9 @@ def renameMp3(path):
                     new_name = unidecode(filename).upper()
                     new_path = os.path.join(root, new_name)
                     os.rename(old_path, new_path)
+                    print(f'=> [BEFORE => {filename}] \n==>[AFTER => {new_name}]')
+                else: 
+                    print(f'[SISTEMA] ==> O {filename} NÃO É MP3')
     else:
         os.system('cls')
         print('===> ESSA PASTA NÃO EXISTE <===')
