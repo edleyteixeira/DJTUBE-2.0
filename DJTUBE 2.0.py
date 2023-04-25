@@ -12,6 +12,7 @@ sys.path.append(func_path)
 from BaixarPlaylist import dowPlaylist , downMp3
 from ConverttoMp3 import convertMp3
 from Rename import renameMp3
+from TagsMp3 import editTag
 
 #SUBMENU
 def SubMenu(opcao):
@@ -66,7 +67,9 @@ def SubMenu(opcao):
         os.system('cls')
         print("Opção inválida. Tente novamente.\n")
         time.sleep(2)
-        Menu()        
+        Menu()  
+      
+              
         
 #MENU PRINCIPAL
         
@@ -75,7 +78,7 @@ def Menu():
         print("\n \n Escolha uma opção:\n")
         print("1 - BAIXE DO YOTUBE")
         print("2 - OPERAÇÕES DE ARQUIVO")
-        print("3 - ")
+        print("3 - EDITAR TAGS MP3")
         print("0 - SAIR \n")
         opcao = input("Opção escolhida: ")
         
@@ -96,7 +99,24 @@ def Menu():
             SubMenu(opcao+op)
                         
         elif opcao == "3":
-            print("Você escolheu a opção 3.")
+            os.system('cls')
+            print("\n \n EDITAR TAGS EM QUE PASTA? \n")
+            subpath = input("\n \n Opção escolhida: ")
+            print("\n \n QUAL CAPA VOCÊ QUER USAR? \n")
+            print("1 - DJREIZINHO.PNG")
+            print("2 - PLAYBACKS.PNG")
+            capa = input("\n \n Opção escolhida: ")
+            if capa == '1':
+                img = 'djreizinho'
+            elif capa == '2':
+                img = 'playbacks'
+            else:
+                Menu()
+            if subpath == '':
+                editTag(down, img)
+            else:
+                editTag(down+subpath+'/', img)
+            
         elif opcao == "0":
             print("Saindo do programa...")
             break
